@@ -1,0 +1,7 @@
+Hello,English
+Hola,Spanish
+Bonjour,French
+Salve,Italian
+Namaste,Hindi
+Hallo,German
+Olá,Portuguese
