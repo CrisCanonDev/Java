@@ -1,4 +1,4 @@
-package Week4.Task6;
+package Week4.Task6.example;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class serializationEx {
+public class Vehicle implements java.io.Serializable {
     public static void serialization_write() {
         try {
             Vehicle[] vArray = new Vehicle[10];
@@ -37,5 +37,9 @@ public class serializationEx {
         } catch (Exception ioe) {
             System.out.println(ioe);
         }
+    }
+    public static void main(String[] args) {
+        serialization_write();
+        serialization_read();
     }
 }
