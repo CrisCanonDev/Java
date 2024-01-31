@@ -85,7 +85,7 @@ public class Fan {
         System.out.println(f1.toString()+"\n");
 
         System.out.println("Fan2 using  get methods: "+ f2.getColor() +" "+f2.getRadius()+" "+f2.getSpeed());
-        System.out.println("Fan 2 using to string method: \n"+f2.toString());
+        System.out.println("Fan 2 using to string method: \n    "+f2.toString());
 
     }
 }

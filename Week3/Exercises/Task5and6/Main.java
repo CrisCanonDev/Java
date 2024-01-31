@@ -3,7 +3,7 @@ package Week3.Exercises.Task5and6;
 public class Main implements java.io.Serializable{
     public static void main(String[] args) {
 
-        // Playlist class creation as a object
+        // Playlist class creation as a object  
         Playlist songs = new Playlist();
 
         // Songs objects creation
