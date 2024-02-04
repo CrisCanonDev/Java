@@ -1,22 +1,14 @@
 package Week4.Task7;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Song implements java.io.Serializable {
-    private static final boolean IOException = false;
     // Datafields
     private String name;
     private String songName;
     private int timesPlayed;
+
+    // Task8 (Data fields)
+    private int review;
+    private String textReview;
 
     // static variable to keep track of songs #
     private static int songsNumber = 0;
@@ -26,11 +18,12 @@ public class Song implements java.io.Serializable {
         this.songName = newSongName;
         this.timesPlayed = i;
         songsNumber += 1; // once a constructor is created through object creation increase songsNumber
+        review = 0;
     }
 
     Song() {
-        songsNumber += 1;
-        ; // once a constructor is created through object creation increase songsNumber
+        songsNumber += 1; // once a constructor is created through object creation increase songsNumber
+        review = 0;
     }
 
     static int getNumberOfSongs() {
@@ -61,7 +54,34 @@ public class Song implements java.io.Serializable {
         timesPlayed = newTimesPlayed;
     }
 
-    
+    // Task 8
+    public int getReview() {
+        return review;
+    }
 
+    public void setReview(int newReview) {
+        if (review >= 0 && review <= 5) {
+            review = newReview;
+        } else {
+            System.out.println("Please enter a valid review (from 0 to 5).");
+        }
+    }
 
+    public String getTextReview() {
+        return textReview;
+    }
+
+    public void setTextReview(String newTextReview) {
+        textReview = newTextReview;
+    }
+
+    public String toString() {
+        if (review == 0 && textReview == null) {
+            return "Artist:" + name + " | Song:" + songName + " | TimesPlayed: " + timesPlayed;
+        } else {
+            return "Artist:" + name + " | Song:" + songName + " | TimesPlayed: " + timesPlayed + " | Review:" + review
+                    + " - " + textReview;
+        }
+
+    }
 }

@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Playlist {
@@ -20,17 +19,10 @@ public class Playlist {
 
     // Constructor to define a songs into every arrays' index position
     public Playlist() {
-        // songs = new Song[10];
-        // for (int x = 0; x > songs.length; x++) {
-        // songs[x] = new Song();
-        // }
         if (fileExists()) {
-            System.out.println("FILE EXISTS");
             try {
                 ObjectInputStream input = new ObjectInputStream(new FileInputStream("songdata.data"));
-                // Song[] vArray = (Song[]) (input.readObject());
                 songsP = (ArrayList<Song>) input.readObject();
-                // songsP = new ArrayList<>(List.of(vArray));
                 input.close();
             } catch (FileNotFoundException fnf) {
                 System.out.println("The file cannot be found. Please check file's name");
@@ -110,9 +102,7 @@ public class Playlist {
             }
             System.out.println("Songs text File obtained and added to array list.");
 
-        } catch (
-
-        IOException e) {
+        } catch (IOException e) {
             System.out.println("Unable to find file");
         }
 

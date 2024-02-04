@@ -57,9 +57,12 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 	/**
 	 * Method that performs serialization
 	 * 
-	 * This method takes no parameter and serialize an array of 10 Circle's instance providing a random radius from 0 - 10 through its class argumented constructor.
+	 * This method takes no parameter and serialize an array of 10 Circle's instance
+	 * providing a random radius from 0 - 10 through its class argumented
+	 * constructor.
 	 * 
-	 * @throws IOException an I/O error occurs while writing to the ObjectOutputStream file.
+	 * @throws IOException an I/O error occurs while writing to the
+	 *                     ObjectOutputStream file.
 	 */
 	public static void serialization_write() {
 		try {
@@ -76,7 +79,7 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 			output.close();
 
 		} catch (IOException ioe) {
-			System.out.println("Error ocurred during serialization: "+ioe.getMessage());
+			System.out.println("Error ocurred during serialization: " + ioe.getMessage());
 			ioe.printStackTrace();
 		}
 	}
@@ -84,10 +87,13 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 	/**
 	 * Method that performs de-serialization
 	 * 
-	 * This method takes no parameter and deserialize object stream containing Circle class information of 10 instances.Then, saving it to an Array to find the higest and lowest area instances.
+	 * This method takes no parameter and deserialize object stream containing
+	 * Circle class information of 10 instances.Then, saving it to an Array to find
+	 * the higest and lowest area instances.
 	 * 
 	 * @throws FileNotFoundException an I/O error occurs while file is not found.
-	 * @throws IOException an I/O error occurs while writing to the ObjectOutputStream file.
+	 * @throws IOException           an I/O error occurs while writing to the
+	 *                               ObjectOutputStream file.
 	 */
 	public static void serialization_read() {
 		try {
@@ -104,6 +110,7 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 			System.out.println(ioe);
 		}
 	}
+
 	/**
 	 * Method that prints smallest and highest circle's area of the array
 	 * 
