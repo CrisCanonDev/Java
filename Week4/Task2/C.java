@@ -30,7 +30,6 @@ abstract public class C {
     public void setB(int b) {
         this.b = b;
     }
-
     public String toString() {
         return "A:" + this.a + " B:" + this.b;
     }
@@ -60,13 +59,13 @@ class D extends C {
     }
 
     // Method that implements abstact superclass method
-    public double calculate(int x, int y) {
-        return x * y;
+    @Override
+    public double calculate(int a, int b) {
+        return this.getA() * this.b;
     }
 
     public String toString() {
-        String superClassMethod = super.toString();
-        return superClassMethod + " Q:" + this.q + " R:" + this.r;
+        return super.toString() + " Q:" + this.q + " R:" + this.r;
     }
 
     public static void main(String[] args) {
@@ -78,7 +77,7 @@ class D extends C {
         obj.setR(3.5);
 
         System.out.println(obj.getQ()); // Obtaining value from Q getter
-        System.out.println(obj.calculate(obj.getA(), obj.getB())); // Obtaining product from getters A and B
+        System.out.println(obj.calculate(obj.getA(), obj.b)); // Obtaining product from getters A and B
 
         System.out.println(obj.toString()); // Returning string made of supperclass method (via super) to its subclass
                                             // by adding its attributes

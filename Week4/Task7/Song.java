@@ -21,6 +21,7 @@ public class Song implements java.io.Serializable {
         review = 0;
     }
 
+    
     Song() {
         songsNumber += 1; // once a constructor is created through object creation increase songsNumber
         review = 0;

@@ -6,7 +6,7 @@ public class Main {
         Exam examResult= new Exam();
         examResult.setPoints(70);
         System.out.println("Exam Result: "+examResult.getGrade());
-        System.out.println("Is a top Exam grade: "+examResult.isTopGrade());
+        System.out.println("Is a top Exam grade: "+examResult.isTopGrade()); //task5
 
         // Instanciating essay class
         Essay essayResult = new Essay(15,15,50, 14);
@@ -14,5 +14,5 @@ public class Main {
 
         //TASK5
         System.out.println("Is a top essay grade: "+essayResult.isTopGrade());
-    } 
+    }
 }

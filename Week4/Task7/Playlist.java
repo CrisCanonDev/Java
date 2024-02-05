@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Playlist {
+public class Playlist  {
     // Array to keep songs
     private ArrayList<Song> songsP = new ArrayList<>();
 
@@ -63,6 +63,11 @@ public class Playlist {
     }
 
     // Task7
+    // (1)
+    /**
+     * Method that read songs textfile any by scrapping saving songs information into song's instances and a playlist
+     * @param x ArrayList of Song type that keep every song of information scrapped.
+     */
     static void getSongsText(ArrayList<Song> x) {
         // ArrayList<Song> songsArrayList = new ArrayList<Song>();
         try {
@@ -101,14 +106,14 @@ public class Playlist {
                 }
             }
             System.out.println("Songs text File obtained and added to array list.");
+            reader.close();
 
         } catch (IOException e) {
             System.out.println("Unable to find file");
         }
-
     }
 
-    public static void serialization_write(ArrayList<Song> x) {
+    static void serialization_write(ArrayList<Song> x) {
         try {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("songdata.data", true));
 

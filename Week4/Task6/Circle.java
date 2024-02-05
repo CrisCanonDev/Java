@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+//Implementing Serialization- deserialization 
 public class Circle extends GeometricObject implements java.io.Serializable {
 	private double radius;
 
@@ -96,6 +97,7 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 	 *                               ObjectOutputStream file.
 	 */
 	public static void serialization_read() {
+		// (2)
 		try {
 			ObjectInputStream input = new ObjectInputStream(new FileInputStream("Circles.data"));
 
@@ -111,6 +113,7 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 		}
 	}
 
+	
 	/**
 	 * Method that prints smallest and highest circle's area of the array
 	 * 
@@ -121,11 +124,18 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 		if (CircleList == null || CircleList.length == 0) {
 			System.out.println("There is no circle instances created");
 		} else {
+			//set as small/highest value the area from 1st index value of Circles' array
 			double smallArea = CircleList[0].getArea();
 			double highestArea = CircleList[0].getArea();
+			//Set its index
 			int smallAreaIndex = 0;
 			int highestAreaIndex = 0;
+
+			System.out.println("--CIRCLES' ARRAY--");
 			for (int i = 0; i < CircleList.length; i++) {
+				System.out.println("CIRCLE "+(i+1));
+				System.out.println(CircleList[i].toString()+"\n");
+
 				double currentArea = CircleList[i].getArea();
 				if (currentArea < smallArea) {
 					smallArea = currentArea;
@@ -145,6 +155,7 @@ public class Circle extends GeometricObject implements java.io.Serializable {
 
 	public static void main(String[] args) {
 		serialization_write();
+
 		serialization_read();
 	}
 }

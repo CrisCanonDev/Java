@@ -34,6 +34,9 @@ class MusicLibraryApp implements MusicLibrary {
         musicApp.run();
     }
 
+    /**
+     * Method that handle user menu, allowing interaction.
+     */
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -76,6 +79,14 @@ class MusicLibraryApp implements MusicLibrary {
         }
     }
 
+    /**
+     * Method that performs serialization
+     * 
+     * This method takes no parameter and serialize the playlist arrayList.
+     * 
+     * @throws IOException an I/O error occurs while writing to the
+     *                     ObjectOutputStream file.
+     */
     private void serialization_write() {
         try {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("songdata.data"));
@@ -89,6 +100,10 @@ class MusicLibraryApp implements MusicLibrary {
         }
     }
 
+    /**
+     * void method that list every playlist's song and prints it.
+     *
+     */
     @Override
     public void listAllSongs() {
         // Implementation
@@ -104,6 +119,11 @@ class MusicLibraryApp implements MusicLibrary {
         }
     }
 
+    /**
+     * void method that asks user to enter a new song
+     * 
+     * @param scanner provide flexibility/reusability of method
+     */
     @Override
     public void addNewSong(Scanner scanner) {
         // Implementation
@@ -123,6 +143,12 @@ class MusicLibraryApp implements MusicLibrary {
         System.out.println("Song added succesfully.");
     }
 
+    /**
+     * void method that remove an specific song based on its playlist index.
+     * 
+     * @param scanner provide flexibility/reusability of method
+     */
+
     @Override
     public void removeSong(Scanner scanner) {
         // Implementation
@@ -139,6 +165,10 @@ class MusicLibraryApp implements MusicLibrary {
 
     }
 
+    /***
+     * void method that iterates over every playlist's song and prints the most
+     * played.
+     */
     @Override
     public void findMostPlayedSong() {
         // Implementation
@@ -157,6 +187,12 @@ class MusicLibraryApp implements MusicLibrary {
         System.out.println("The song that has been played the most is: " + songHighest.toString());
     }
 
+    /**
+     * Void method that provides implementation of selecting randomly a song from
+     * the playlist and asks users to input a review of the songs.
+     * 
+     * @param scanner provide flexibility/reusability of method
+     */
     @Override
     public void randomAndReview(Scanner scanner) {
         Random rn = new Random();
@@ -193,6 +229,12 @@ class MusicLibraryApp implements MusicLibrary {
     }
 
     // task9
+    /**
+     * Non-arguments parameters that iterate over every playlist's song to identify
+     * the quantity of different playlist's artist.
+     * 
+     * @return Length of artist that are into the playlist.
+     */
     public int differentArtists() {
         ArrayList<String> artistList = new ArrayList<>();
         for (Song s : musicLibrary) {

@@ -9,7 +9,7 @@ public class areas {
         // 4. Static data only acessed using static method
 
         // WHY USE?
-        // 1. access and hange static variables
+        // 1. access and handle static variables
         // 2. 
 
     //OVERLOADING
