@@ -1,12 +1,18 @@
 import java.util.Scanner;
+/*
+ * Write a Java method that calculates how many years, weeks and days can be formed from a given
+integer variable days. The method should take one integer variable as its parameter, and it should
+return a String variable
+ */
 
-public class howManyYWD {
+public class YearsMonthsDays {
     public static void main(String[] args) {   
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter number of days -> ");
-        int days = sc.nextInt();
+        int days = scanner.nextInt();
         String result = howManyYWD(days);
         System.out.println(result);
+        scanner.close();
     }
     
     public static String howManyYWD(int days){
