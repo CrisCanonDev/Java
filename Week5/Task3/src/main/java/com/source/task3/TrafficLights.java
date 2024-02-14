@@ -3,64 +3,68 @@ package com.source.task3;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 import java.util.Random;
 
 public class TrafficLights extends Application {
-    Circle circle1, circle2, circle3;
-    public void Rectangle(){
 
+    public boolean isTrafficLightSelected(int indexPosition, int randomValue){
+       if(indexPosition == randomValue) return  true;
+       return false;
+    }
+    public void setCircle(double radius, double trafficLightGap,Pane layout, int numberOfTrafficLights, int randomCircle, int index){
+        String[] colors = {"RED","YELLOW","GREEN"};
+
+        Circle circle = new Circle();
+        circle.setRadius(radius);
+        circle.setFill(Color.valueOf(colors[index]));
+        circle.setCenterX((layout.getWidth()) / 2);
+        circle.setCenterY( (layout.getHeight() / 2) + (index - numberOfTrafficLights / 2.0 + 0.5) * trafficLightGap);
+        if (index == randomCircle){
+            circle.setStroke(Color.BLACK);
+        }else{
+            circle.setStroke(Color.TRANSPARENT);
+        }
+        layout.getChildren().add(circle);
+    }
+    public void setRectangle(double width, double height, Pane layout){
+        Rectangle rectangle = new Rectangle(width, height);
+        double centerRectangleCoordinateX = (layout.getWidth() - width) / 2;
+        double centerRectangleCoordinateY = (layout.getHeight() - height) / 2;
+
+        rectangle.setLayoutX(centerRectangleCoordinateX);
+        rectangle.setLayoutY(centerRectangleCoordinateY);
+        rectangle.setFill(Color.LIGHTBLUE);
+        layout.getChildren().add(rectangle);
     }
 
+
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        int numberCircles = 3;
-        primaryStage.setTitle("Traffic color");
-        Pane pane = new Pane();
+    public void start(Stage primaryStage) {
         double widthRectangle = 80;
         double heightRectangle = 200;
         double circleRadius = widthRectangle / 3;
         double gapBetweenCircles = heightRectangle / 3.3;
+        int trafficLightsNumber = 3;
 
-        Rectangle rectangle = new Rectangle(widthRectangle, heightRectangle);
-
-        pane.getChildren().add(rectangle);
-
-        VBox root = new VBox();
-
-
+        Pane pane = new Pane();
         Scene scene = new Scene(pane, 200, 250);
-        double centerRectangleCoordenateX = (pane.getWidth() - widthRectangle) / 2;
-        double centerRectangleCoordenateY = (pane.getHeight() - heightRectangle) / 2;
-        rectangle.setLayoutX(centerRectangleCoordenateX);
-        rectangle.setLayoutY(centerRectangleCoordenateY);
-        rectangle.setFill(Color.LIGHTBLUE);
 
-        String[] colors = {"RED","YELLOW","GREEN"};
+        setRectangle(widthRectangle, heightRectangle,pane);
+
+
+
         Random random = new Random();
-        int circleBorderSelected = random.nextInt(numberCircles);
-        for (int i = 0; i < numberCircles; i++) {
-            Circle circle = new Circle();
-            circle.setRadius(circleRadius);
-            circle.setFill(Color.valueOf(colors[i]));
-            circle.setCenterX((pane.getWidth()) / 2);
-            circle.setCenterY((pane.getHeight() / 2) + (i - numberCircles / 2.0 + 0.5) * gapBetweenCircles);
-            if (i == circleBorderSelected){
-                circle.setStroke(Color.BLACK);
-            }else{
-                circle.setStroke(Color.TRANSPARENT);
-            }
-            pane.getChildren().add(circle);
+        int randomTrafficLightSelected = random.nextInt(3);
+        for (int i = 0; i < trafficLightsNumber; i++) {
+            setCircle(circleRadius, gapBetweenCircles, pane, trafficLightsNumber, randomTrafficLightSelected, i);
         }
 
-
+        primaryStage.setTitle("Traffic color");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
