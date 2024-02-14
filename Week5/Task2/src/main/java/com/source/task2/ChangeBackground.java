@@ -17,30 +17,33 @@ public class ChangeBackground extends Application {
     Button button1,button2, button3;
     Scene scene;
     HBox root;
+    public void changeBackgroundColor(String color){
+        root.setStyle(color);
+    }
+    public Button setButton(String buttonText, String backgroundColor) {
+        Button button = new Button(buttonText);
+        button.setOnAction(actionEvent -> changeBackgroundColor("-fx-background-color:"+backgroundColor+";"));
+        return button;
+    }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("Task2");
-        button1 = new Button("Button 1");
-        button2 = new Button("Button 2");
-        button3 = new Button("Button 3");
 
-
-        button1.setOnAction(actionEvent -> changeBackground("-fx-background-color: lightblue;"));
-        button2.setOnAction(actionEvent -> changeBackground("-fx-background-color: green;"));
-        button3.setOnAction(actionEvent -> changeBackground("-fx-background-color: violet;"));
+        button1 = setButton("Button1","lightBlue");
+        button2 = setButton("Button2","green");
+        button3 = setButton("Button3", "violet");
 
         root = new HBox(10);
         root.setAlignment(Pos.CENTER);
-        root.getChildren().addAll(button1,button2,button3);
+        root.getChildren().addAll(button1, button2,button3);
 
         scene = new Scene(root, 300, 150);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public void changeBackground(String color){
-        root.setStyle(color);
-    }
+
     public static void main(String[] args) {
         launch();
     }

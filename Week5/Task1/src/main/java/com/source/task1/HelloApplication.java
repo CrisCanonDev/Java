@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
 
         Scene scene = new Scene(layout, 300,300);
         primaryStage.setScene(scene);
-        primaryStage.show   ();
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
