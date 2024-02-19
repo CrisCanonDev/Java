@@ -1,6 +1,7 @@
 package com.source.task6;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -30,11 +31,15 @@ public class MicrowaveLayout extends Application {
 
         TextField textField = new TextField();
         textField.setStyle("-fx-alignment: center;");
-        textField.setText("0:00");
+        textField.setText("0:dddd");
         textField.setPrefSize(300, 50);
 
         GridPane microwaveButtonGrid = new GridPane();
         microwaveButtonGrid.setPrefSize(300,240);
+        microwaveButtonGrid.setAlignment(Pos.CENTER);
+        microwaveButtonGrid.setHgap(10);
+        microwaveButtonGrid.setVgap(10);
+
 
         int row =0;
         int column=0;

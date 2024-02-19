@@ -42,7 +42,7 @@ public class ThreeClocks extends Application {
         root.setPadding(new Insets(10));
 
         // Create a Scene
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,475,100);
 
         // Set the Scene to the Stage
         primaryStage.setScene(scene);

@@ -81,7 +81,7 @@ public class CalculatorLayout extends Application {
         setLabelAndTextField("Result ",gridPane);
 
 
-        Scene scene = new Scene(gridPane, 500,300);
+        Scene scene = new Scene(gridPane, 500,200);
         primaryStage.setScene(scene);
         primaryStage.show();
 
