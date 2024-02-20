@@ -1,0 +1,95 @@
+        q3 song1 = new q3("Bohemian Rhapsody", "Queen", 100);
+        q3 song2 = new q3("Stairway to Heaven", "Led Zeppelin", 50);
+        q3 song3 = new q3("Hotel California", "Eagles", 75);
+        
+        Song song1 = new Song("Photograph", "Ed Sheran", 10);
+        Song song2 = new Song("Unfaithful", "Rihanna", 5);
+        Song song3 = new Song("Hello", "Adele", 15);
+        
+        Song song1 = new Song("PDA","Interpol",34);
+        Song song2 = new Song("MUD","Flume",99);
+        Song song3 = new Song("Sick and Tired","MGK",21);
+        
+        Song song1 = new Song("New Day","Take That", 3);
+        Song song2 = new Song("CHRISTIAN","Zior Park", 9);
+        
+        Song song1 = new Song("The Beatles", "Girl", 1);
+        Song song2 = new Song("Kanye West", "Power", 2);
+        Song song3 = new Song("Taylor Swift ft. Kendrick Lamar", "Bad Blood", 3);
+        
+        Songg song1 = new Songg("Shape of You", "Ed Sheeran", 150);
+        Songg song2 = new Songg("Believer", "Imagine Dragons", 200);
+        Songg song3 = new Songg("Blinding Lights", "The Weeknd", 180);
+        
+        Song song1 = new Song("Weekdays", "Skeete");
+        Song song2 = new Song("London bed", "Jada Kingdom");
+        Song song3 = new Song("Cast", "Shallipoppi ft ODUMOBLVCK");
+        
+        Song song1 = new Song("Happy", "NF", 10);
+        Song song2 = new Song("The Good In Me", "Jon Bellion", 5);
+        Song song3 = new Song("Sugar", "Remi Wolf", 15);
+        
+        Song song1 = new Song("Beautiful life", "Ace of Base", 97); 
+        Song song2 = new Song("Russians", "Sting", 53);
+        Song song3 = new Song("Wind of Change", "Scorpions");
+        
+        Song song1 = new Song("Stan", "Eminem", 10);
+        Song song2 = new Song("Without Me", "Eminem", 7);
+        Song song3 = new Song("Business", "Eminem", 20);
+        
+        Song song1 = new Song("Time", "Pink Floyd", 100);
+        Song song2 = new Song("Stairway to heaven", "Led Zeppelin", 200);
+        Song song3 = new Song("Yesterday", "The Beatles", 150);
+        
+        Song song1 = new Song("Good To Be", "Mark Ambor", 10); 
+        Song song2 = new Song("Best Day Of My Life", "Tom Odell", 24);
+        Song song3 = new Song("Sedona", "Houndmouth", 36);
+        
+        Song song1 = new Song("Harridan", "Porcupine Tree", 10);
+        
+        Song song_001 = new Song("2 Minutes to Midnight", "Iron Maiden");
+        Song song_002 = new Song("Master of Puppets", "Metallica");
+        Song song_003 = new Song("Proud to Be Loud", "Pantera");
+        
+        Song emotion = new Song("Emotion", "Carly Rae Jepsen", 0);
+        Song summer = new Song("Summer (Nature's Crescendo)", "ConcernedApe", 100);
+        Song amusementPark = new Song("Amusement Park", "Keigo Hoashi", 1000);
+        
+        firstSong.setName("Unshaken");
+        firstSong.setAuthor("D'angelo");
+        firstSong.setPlays(2000000);
+                
+        song secondSong = new song();
+                
+        secondSong.setName("That's the way it is");
+        secondSong.setAuthor("Daniel Lanois");
+        secondSong.setPlays(498000);
+        
+        firstSong.setValue("mokkitie", "arttuWiskari", "100 000");
+        secondSong.setValue("demons", "imagineDragons", "2 000 000");
+        thirdSong.setValue("adieu", "rammstein", "1 500 000");
+        
+        Song song1 = new Song("Helan går", "Author 1", 10);
+        Song song2 = new Song(" Minnet", "Author 2", 5);
+        Song song3 = new Song("Never Gonna Give You Up", "Rick Astley", 20);
+        
+        Song song1 = new Song("Shape of You", "Ed Sheeran", 100);
+        Song song2 = new Song("Believer", "Imagine Dragons", 75);
+        Song song3 = new Song("Someone You Loved", "Lewis Capaldi", 50);
+        
+        Song song1 = new Song("Never Gonna Give You Up", "Rick Astley", 2300);
+        Song song2 = new Song("Song 2", "Blur", 5003);
+        Song song3 = new Song("Everybody", "Backstreet Boys", 32323200);
+        
+        Song song1 = new Song("Yesterday", "John Lennon", 101); 
+        Song song2 = new Song("Today", "Robert B. Weide", 5); 
+        Song song3 = new Song("Tomorrow", "Steven King");
+        
+        Song song1 = new Song("Hurt", "Nine Inch Nails", 90293006);
+        Song song2 = new Song("Oh! Sweet Nuthin'","The Velvet Underground", 91642956);
+        Song song3 = new Song("This Must Be the Place (Naive Melody)",
+                        "Talking Heads", 256175201);
+                        
+        var emotion = new Song("Emotion", "Carly Rae Jepsen", 0);
+        var summer = new Song("Summer (Nature's Crescendo)", "ConcernedApe", 100);
+        var amusementPark = new Song("Amusement Park", "Keigo Hoashi", 1000);
