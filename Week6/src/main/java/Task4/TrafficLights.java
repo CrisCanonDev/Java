@@ -9,7 +9,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class TrafficLights extends Application {
     Pane pane = new Pane();

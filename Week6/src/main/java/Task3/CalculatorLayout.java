@@ -16,7 +16,6 @@ public class CalculatorLayout extends Application {
 
     TextField firstOperand = new TextField(), secondOperand = new TextField(), result = new TextField();
     Button add, subtract, multiply, divide;
-    double value1 , value2;
     int textIndex = -1;
 
     public HBox textAndLabel(String labelText, TextField textFieldToEnter){
@@ -54,10 +53,12 @@ public class CalculatorLayout extends Application {
         Double firstDoubleOperandValue = Double.parseDouble(firstOperand.getText());
         Double secondDoubleOperandValue = Double.parseDouble(secondOperand.getText());
 
-        if(operandAsText.equals("Add")) return firstDoubleOperandValue+secondDoubleOperandValue;
-        else if(operandAsText.equals("Subtract")) return firstDoubleOperandValue-secondDoubleOperandValue;
-        else if(operandAsText.equals("Multiply")) return firstDoubleOperandValue*secondDoubleOperandValue;
-        return firstDoubleOperandValue/secondDoubleOperandValue;
+        return switch (operandAsText) {
+            case "Add" -> firstDoubleOperandValue + secondDoubleOperandValue;
+            case "Subtract" -> firstDoubleOperandValue - secondDoubleOperandValue;
+            case "Multiply" -> firstDoubleOperandValue * secondDoubleOperandValue;
+            default -> firstDoubleOperandValue / secondDoubleOperandValue;
+        };
 
     }
 
