@@ -184,12 +184,15 @@ public class MusicUserInterface extends Application {
                 (int) (color.getBlue() * 255));
     }
 
+    /**
+     * FUNCTION
+     * @param layout
+     */
     public void changeBackgroundColor(HBox layout){
         layout.setBackground(new Background(new BackgroundFill(generateRandomColor(), null, null)));
     }
 
     public VBox setTextLayout(){
-
         VBox labelInformationLayout = new VBox();
         labelInformationLayout.setAlignment(Pos.CENTER);
         labelInformationLayout.setSpacing(10);
@@ -233,7 +236,6 @@ public class MusicUserInterface extends Application {
 
         stop.setOnAction(event -> {
             defaultSettings(mainLayout, primaryStage);
-
         }
         );
 

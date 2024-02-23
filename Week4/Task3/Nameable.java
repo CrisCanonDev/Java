@@ -30,6 +30,15 @@ public interface Nameable {
 /**
  * Person
  */
+/**
+ * InnerNameable
+ */
+class two implements Nameable{
+    private String name;
+    public void setName(Stringname){
+        this.name = name;
+    };
+}
 class Person implements Nameable{
     private String name;
 

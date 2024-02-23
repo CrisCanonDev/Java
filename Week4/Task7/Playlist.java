@@ -19,22 +19,22 @@ public class Playlist  {
 
     // Constructor to define a songs into every arrays' index position
     public Playlist() {
-        if (fileExists()) {
-            try {
-                ObjectInputStream input = new ObjectInputStream(new FileInputStream("songdata.data"));
-                songsP = (ArrayList<Song>) input.readObject();
-                input.close();
-            } catch (FileNotFoundException fnf) {
-                System.out.println("The file cannot be found. Please check file's name");
-            } catch (Exception ioe) {
-                System.out.println(ioe);
+            if (fileExists()) {
+                try {
+                    ObjectInputStream input = new ObjectInputStream(new FileInputStream("songdata.data"));
+                    songsP = (ArrayList<Song>) input.readObject();
+                    input.close();
+                } catch (FileNotFoundException fnf) {
+                    System.out.println("The file cannot be found. Please check file's name");
+                } catch (Exception ioe) {
+                    System.out.println(ioe);
+                }
+            } else {
+                System.out.println("FILE DOES NOT EXISTS");
+                getSongsText(songsP);
             }
-        } else {
-            System.out.println("FILE DOES NOT EXISTS");
-            getSongsText(songsP);
-        }
 
-        serialization_write(songsP);
+            serialization_write(songsP);
     }
 
     private static boolean fileExists() {

@@ -24,6 +24,7 @@
 
         @Override
         public void start(Stage primaryStage) throws Exception {
+            labelOfMouseIntoCircle.setVisible(false);
             setCircleInLayout();
 
 //            circle.setOnMouseMoved(event -> {
