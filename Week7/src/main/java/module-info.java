@@ -3,6 +3,6 @@ module Task {
     requires javafx.fxml;
 
 
-    opens Task1 to javafx.fxml;
-    exports Task1;
+    opens Task2 to javafx.fxml;
+    exports Task2;
 }
