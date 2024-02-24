@@ -1,0 +1,4 @@
+What is the capital of Mexico?,Mexico City, Tijuana, Puebla, 1
+What colors is the flag of Spain?,Red and Blue, Blue and White, Red and yellow, 3
+Which country brie cheese is originally from?,Spain, France, Italy, 2
+Which planet is the closest to the the sun?,Venus, Earth, Mercury, 3
