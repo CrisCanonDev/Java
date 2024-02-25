@@ -31,6 +31,12 @@ public class Countries extends Application implements java.io.Serializable {
     public ArrayList<Country> listOfCountries = new ArrayList<Country>();
 
     Button addCountry = new Button("Add");
+
+    public void setEmptyTexFieldsAndComboBox(){
+        countryName.setText("");
+        countryPopulation.setText("");
+        comboBoxContinents.setValue("");
+    }
     public Label setLabel(String nameLabel){
         Label label = new Label(nameLabel);
         label.setMinWidth(80);
@@ -61,13 +67,21 @@ public class Countries extends Application implements java.io.Serializable {
         mainLayout.getChildren().addAll(setLabelAndTextField("Name", countryName), setLabelAndTextField("Population", countryPopulation), setComboBoxOfContinents(), setButtonToAddCountry());
     }
     private void checkTextFieldDataType(ActionEvent event) {
-        Boolean iscountryNameValid = isDataTypeCorrect(countryName, "[a-zA-Z]+");
+        Boolean iscountryNameValid = isDataTypeCorrect(countryName, "[a-zA-Z\\s]+");
         Boolean iscountryPopulationValid = isDataTypeCorrect(countryPopulation, "\\d+");
         Boolean isContinentValid = checkComboBox();
-        if(iscountryNameValid && iscountryPopulationValid && isContinentValid){
-           addNewCountryToList( setNewCountry() );
-           serialize_write(listOfCountries);
+        if (iscountryNameValid && iscountryPopulationValid && isContinentValid) {
+            addNewCountryToList(setNewCountry());
+            serialize_write(listOfCountries);
+            setEmptyTexFieldsAndComboBox();
         }
+        if(iscountryNameValid) countryName.setStyle("-fx-border-color: green; -fx-border-width: 2px;");
+        else countryName.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+        if(iscountryPopulationValid) countryPopulation.setStyle("-fx-border-color: green; -fx-border-width: 2px;");
+        else countryPopulation.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+        if(isContinentValid) comboBoxContinents.setStyle("-fx-border-color: green; -fx-border-width: 2px;");
+        else comboBoxContinents.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+
     }
     public Country setNewCountry(){
         Country newCountry = new Country();
@@ -94,9 +108,9 @@ public class Countries extends Application implements java.io.Serializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        serialize_read();
         primaryStage.setTitle("Countries");
         setObjectsInLayout();
-
 
         addCountry.setOnAction(this::checkTextFieldDataType);
         Scene scene = new Scene(mainLayout);
@@ -122,17 +136,17 @@ public class Countries extends Application implements java.io.Serializable {
             ioe.printStackTrace();
         }
     }
-
-    public ArrayList<Country> serialize_read(){
+    public void serialize_read() {
         try {
             ObjectInputStream input = new ObjectInputStream(new FileInputStream("countriesData.data"));
+            listOfCountries = (ArrayList<Country>) input.readObject();
             input.close();
-            return  (ArrayList<Country>) input.readObject();
         } catch (FileNotFoundException fnf) {
             System.out.println("The file cannot be found. Please check file's name");
         } catch (Exception ioe) {
-            System.out.println(ioe);
+            System.out.println("ss" + ioe);
         }
-        return null;
     }
+
+
 }
