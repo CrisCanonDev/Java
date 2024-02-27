@@ -1,6 +1,6 @@
 package Week2;
 
-public class task1B {
+public class WeeklySales {
     public static void main(String[] args) {
         int[][] twoDimensionArray = {
                 { 1, 2, 3, 4, 5, 6, 7 },
@@ -13,7 +13,7 @@ public class task1B {
             }
         }
         String salesPerWeek = weeklySales(doubleTwoDimensionArray);
-        System.out.println("The total sales per week is: "+salesPerWeek);
+        System.out.println("The total sales per week is: "+ salesPerWeek);
     }
 
     public static String weeklySales(Double[][] arr) {

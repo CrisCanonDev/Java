@@ -1,6 +1,6 @@
 package Week2;
 
-public class task1A {
+public class AverageOfArrayValues{
     public static void main(String[] args) {
         Double[] listNumbers = { 2.4, 3.5, 2.5, 77.2, 7.7, 2.11 };
         Double averageValue = average(listNumbers);
