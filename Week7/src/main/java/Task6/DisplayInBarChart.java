@@ -24,14 +24,12 @@ public class DisplayInBarChart extends Application {
     String fileAsText ="";
     Button btnView = new Button("View");
     TextField textField = new TextField();
-    ArrayList<Integer> countArray = new ArrayList<>(26);
+    ArrayList<Double> countArray = new ArrayList<>(26);
     CategoryAxis xAxis = new CategoryAxis();
     NumberAxis yAxis = new NumberAxis();
 
     public void setAxes() {
-        yAxis.setTickUnit(1);
-        xAxis.setTickLabelRotation(90);
-
+        yAxis.setTickUnit(1.0);
     }
 
     BarChart<String, Number> barChart;
@@ -64,21 +62,17 @@ public class DisplayInBarChart extends Application {
         btnView.setMinWidth(mainLayout.getWidth()/4);
         return new HBox(label,textField,btnView);
     }
-    public void clearingBarChartData(){
-        series.getData().clear();
-        barChart.getData().clear();
-    }
 
     private void isFileFound(boolean  fileFound) {
         if(fileFound) setBarChart();
-        else clearingBarChartData();
+        else series.getData();
     }
     public void settingLetterOccurrences(String textInputted) {
         String inputText = textInputted.toLowerCase();
         countArray.clear();
 
         for(int i=0; i< 26;i++){
-            countArray.add(0);
+            countArray.add(0.0);
         }
         for (char ch : inputText.toCharArray()) {
             if (Character.isLetter(ch)) {
@@ -91,19 +85,26 @@ public class DisplayInBarChart extends Application {
         for(int i=0; i<countArray.size(); i++){
             char c = (char) ('a' +i);
             series.getData().add(new XYChart.Data<>(String.valueOf(c), countArray.get(i)));
+            System.out.println(countArray.get(i));
         }
     }
     public void setBarChart(){
-        clearingBarChartData();
         settingLetterOccurrences(fileAsText);
         enteringDataToBartChart();
 
-
+        barChart.getData().clear();
         barChart.getData().add(series);
+        double maxValue = Collections.max(countArray);
+
+        // Set the upper bound of the Y-axis to the maximum value plus a buffer
+        yAxis.setAutoRanging(false); // Disable auto-ranging to allow manual setting of bounds
+        yAxis.setUpperBound(maxValue + 1); // Set the upper bound with a buffer
+
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         setAxes();
         barChart = new BarChart<>(xAxis, yAxis);
         setBarChart();
