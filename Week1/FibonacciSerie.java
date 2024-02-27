@@ -1,8 +1,5 @@
 import java.util.Scanner;
-/*
- * Write a method that returns a String containing a series of Fibonacci numbers. The method takes
-one parameter: an integer of how many numbers to include.
- */
+
 public class FibonacciSerie {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

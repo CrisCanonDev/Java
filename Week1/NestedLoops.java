@@ -1,11 +1,5 @@
 import java.util.Scanner;
 
-/*
- * Write a method called NestedLoop, which takes one String variable s and an integer variable
-upper_limit as its parameters. In the method, construct a nested loop structure, where the outer
-loop iterates the leJers of the given String s. The inner loop iterates from 0 un0l the upper limit
-(including the upper limit)
- */
 public class NestedLoops {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
