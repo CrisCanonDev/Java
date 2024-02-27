@@ -32,3 +32,23 @@ Every exercise statement is commented at the beggining of each class or project.
 - Exception handling.
 - Object serialization.
 - Interfaces and abstract classes.
+
+#### [WEEK 5](./Week5/)
+- JavaFX Basics.
+- Stages, Scenes, Nodes.
+- Panes, groups, UI controls.
+- Property binding, Colors, Font, Images
+- Pane, StackPane, FlowPane, GridPane, HBox, VBox.
+- JavaFC classes: Text, Line, Rectangle, Ellipse, Arc, Polygon.
+
+
+#### [WEEK 6](./Week6/)
+- JavaFX with event-driven approach.
+- Event Handlers.
+- Listerners.
+
+#### [WEEK 7](./Wee7/)
+- JavaFX UI controls and multimedia.
+- Label, Button, CheckBox, RadioButton, TextField, TextArea, ComboBox, ListView, Slider.
+
+
