@@ -3,7 +3,7 @@ package Week2;
 import java.io.File;
 import java.util.Scanner;
 
-public class task2 {
+public class LanguageTranslation {
     public static void main(String[] args) {
         boolean flagFound = false;
         Scanner sc = new Scanner(System.in);
