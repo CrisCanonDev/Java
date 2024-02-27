@@ -38,7 +38,8 @@ public class DisplayInBarChart extends Application {
     public void getTextFromTextFile(String fileName){
         try {
             fileAsText = "";
-            File file = new File("C:\\Users\\crist\\Desktop\\UEF\\JAVA\\Week7\\src\\main\\java\\Task6\\"+fileName);
+            String currentDirectory = System.getProperty("user.dir");
+            File file = new File(currentDirectory+ "\\"+fileName);
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
